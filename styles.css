@@ -81,6 +81,10 @@ main
     align-items: center;
     font-size: 26px;
     font-family: 'Libre Franklin', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 #keyboard
@@ -138,6 +142,10 @@ main
     font-size: 18px;
     font-family: 'Libre Franklin', sans-serif;
     color: white;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .WideKeyboardTile
