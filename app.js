@@ -3,7 +3,7 @@ let CurrentTile = 0;
 let MinLetterIndex = 0;
 let MaxLetterIndex = 5;
 
-let ArrayOfWords = ["PALEC", "KAJAK"];
+let ArrayOfWords = ["PALEC", "PALCE", "KAJAK"];
 let WordToDiscover = DiscoverWord();
 
 console.log(WordToDiscover);
@@ -50,7 +50,17 @@ EnterTile.addEventListener("click", function(){
         let TempWord = "";
         for(let i = 5;i > 0;i--)
         {
-            TempWord += GridItems[CurrentTile - i].innerHTML;
+            let CurrentOperationTileNumber = CurrentTile - i;
+            let Temp = GridItems[CurrentOperationTileNumber].innerHTML;
+            TempWord += Temp;
+            if(WordToDiscover[CurrentOperationTileNumber] === Temp)
+            {
+                GridItems[CurrentOperationTileNumber].classList.add("TileAtCorrectPosition");
+            }
+            else if(WordToDiscover.indexOf(Temp) > -1)
+            {
+                GridItems[CurrentOperationTileNumber].classList.add("TileAtWrongPosition");
+            }
         }
 
         if(TempWord === WordToDiscover)
@@ -61,9 +71,10 @@ EnterTile.addEventListener("click", function(){
         }
 
         if(CheckWordCoretness(TempWord))
-        { 
+        {
             MinLetterIndex += 5;
             MaxLetterIndex += 5;
+            
             console.log(TempWord);
         }
     }

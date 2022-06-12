@@ -162,4 +162,34 @@ main
     font-size: 14px;
     font-family: 'Libre Franklin', sans-serif;
     color: white;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.TileAtWrongPosition
+{
+    background-color: yellow;
+}
+
+.TileAtCorrectPosition
+{
+    background-color: aquamarine;
+}
+
+#test
+{
+    width: 343px;
+    height: 200px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    font-size: 40px;
+    color: white;
+    background-color: green;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
