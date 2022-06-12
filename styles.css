@@ -183,13 +183,9 @@ main
     width: 343px;
     height: 200px;
     position: absolute;
-    top: 10%;
-    left: 50%;
     font-size: 40px;
     color: white;
     background-color: green;
     text-align: center;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+    transform: translate(50vw, 50%);
 }
