@@ -16,6 +16,7 @@ body
 {
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
 header
@@ -178,14 +179,56 @@ main
     background-color: aquamarine;
 }
 
-#test
+.PopUp
 {
-    width: 343px;
-    height: 200px;
+    width: 20vw;
+    height: 20vh;
+    min-width: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     position: absolute;
-    font-size: 40px;
-    color: white;
-    background-color: green;
     text-align: center;
-    transform: translate(50vw, 50%);
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+
+    color: white;
+
+    transform: translate(40vw, 20vh);
+    border-radius: 25px;
+    opacity: 0%;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.PopUp button
+{
+    width: 75%;
+    height: 30%;
+    min-width: 120px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background-color: lightgreen;
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: -25px;
+}
+
+#WinningPoUp
+{
+    background-color: green;
+}
+
+#LosingPoUp
+{
+    background-color: red;
+    font-size: 30px;
 }

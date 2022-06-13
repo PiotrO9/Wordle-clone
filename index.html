@@ -12,14 +12,23 @@
     <title>Wordle clone</title>
 </head>
 <body>
-    
+    <div id="WinningPoUp" class="PopUp">
+        <p>Zwycięstwo</p>
+        <button id="WinningPoUp__button">
+            Zagraj jeszcze raz
+        </button>
+    </div>
+    <div id="LosingPoUp" class="PopUp">
+        <p>Przegrana</p>
+        <p id="PasswordAnswer">Wyraz to: </p>
+        <button id="LosingPopUp__button">
+            Zagraj jeszcze raz
+        </button>
+    </div>
     <header>
         <h1>Wordle</h1>
     </header>
     <main>
-        <div id="test">
-            <p>Testing</p>
-        </div>
         <div id="app">
             <div id="InputArea">
                 <div id="GirdContainer">
@@ -93,6 +102,11 @@
             </div>
         </div>
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
     <script src="app.js"></script>
 </body>
 </html>
