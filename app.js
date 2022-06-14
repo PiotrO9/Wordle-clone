@@ -4,7 +4,7 @@ let MinLetterIndex = 0;
 let MaxLetterIndex = 5;
 let CompletedWords = 0;
 
-let ArrayOfWords = ["KAJAK", "HAMAK"];
+let ArrayOfWords = ["KAJAK", "HAMAK", "ZAMEK", "PTAKI", ""];
 let WordToDiscover = DiscoverWord();
 console.log(WordToDiscover);
 
@@ -12,9 +12,11 @@ const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
 const BackspaceTile = document.querySelector("#Backspace");
 const EnterTile = document.querySelector("#Enter");
-const CloseButtonWinning = document.querySelector("#WinningPoUp__button");
-const CloseButtonLosing = document.querySelector("#LosingPopUp__button");
+
+const ResultPopUp = document.querySelector("#ResultPopUp");
+const CloseButton = document.querySelector("#PopUp__button");
 const PasswordAnswer = document.querySelector("#PasswordAnswer");
+const Result = document.querySelector("#Result");
 
 const KeyboardTiels = document.querySelectorAll(".KeyboardTile");
 const GridItems = document.querySelectorAll(".grid-item");
@@ -92,15 +94,16 @@ EnterTile.addEventListener("click", function(){
         if(TempWord === WordToDiscover)
         {
             console.log("Win");
-            tl.fromTo("#WinningPoUp", { opacity: 0 }, { opacity: 1, duration: 1 });
+            SetLoyoutAsWin();
+            ShowPopUp();
             return;
         }
         else
         {
             if(CurrentTile == MaximumAmountOfTiles)
             {
-                PasswordAnswer.innerHTML += WordToDiscover;
-                tl.fromTo("#LosingPoUp", { opacity: 0 }, { opacity: 1, duration: 1 });
+                SetLoyoutAsLose();
+                ShowPopUp();
                 console.log("Lose");
                 return;
             }
@@ -108,13 +111,8 @@ EnterTile.addEventListener("click", function(){
     }
 });
 
-CloseButtonWinning.addEventListener("click", function(){
-    tl.fromTo("#WinningPoUp", { opacity: 1 }, { opacity: 0, duration: 1 });
-    RestartGame();
-})
-
-CloseButtonLosing.addEventListener("click", function(){
-    tl.fromTo("#LosingPoUp", { opacity: 1 }, { opacity: 0, duration: 1 });
+CloseButton.addEventListener("click", function(){
+    HidePopUp();
     RestartGame();
 })
 
@@ -145,5 +143,38 @@ function RestartGame()
     CurrentTile = 0;
     MinLetterIndex = 0;
     MaxLetterIndex = 5;
+    CompletedWords = 0;
     console.log(WordToDiscover);
+}
+
+function ShowPopUp()
+{
+    tl.fromTo("#ResultPopUp", { opacity: 0 }, { opacity: 1, duration: 1 });
+}
+
+function HidePopUp()
+{
+    tl.fromTo("#ResultPopUp", { opacity: 1 }, { opacity: 0, duration: 1 });
+}
+
+function SetLoyoutAsWin()
+{
+    const ResultPopUpElement = document.getElementById("ResultPopUp");
+    ResultPopUpElement.style.backgroundColor = "green";
+    ResultPopUpElement.style.color = "white";
+    ResultPopUpElement.style.fontSize = "35px";
+
+    Result.innerHTML = "Zwycięstwo";
+}
+
+function SetLoyoutAsLose()
+{
+    const ResultPopUpElement = document.getElementById("ResultPopUp");
+    ResultPopUpElement.style.backgroundColor = "red";
+    ResultPopUpElement.style.color = "white";
+    ResultPopUpElement.style.fontSize = "28px";
+    
+    Result.innerHTML = "Przegrana";
+    PasswordAnswer.innerHTML = "Wyraz to: " + WordToDiscover;
+
 }

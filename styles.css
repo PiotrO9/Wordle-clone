@@ -179,7 +179,7 @@ main
     background-color: aquamarine;
 }
 
-.PopUp
+#ResultPopUp
 {
     width: 20vw;
     height: 20vh;
@@ -207,7 +207,7 @@ main
     -ms-user-select: none;
 }
 
-.PopUp button
+#ResultPopUp button
 {
     width: 75%;
     height: 30%;
@@ -220,15 +220,4 @@ main
     font-size: 22px;
     font-weight: 600;
     margin-top: -25px;
-}
-
-#WinningPoUp
-{
-    background-color: green;
-}
-
-#LosingPoUp
-{
-    background-color: red;
-    font-size: 30px;
 }
