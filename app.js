@@ -4,9 +4,13 @@ let MinLetterIndex = 0;
 let MaxLetterIndex = 5;
 let CompletedWords = 0;
 
-let ArrayOfWords = ["KAJAK", "HAMAK", "ZAMEK", "PTAKI"];
+let ArrayOfWords = ["KAJAK", "HAMAK", "ZAMEK", "PTAKI", "RADOM", "AKORD", "NOKIA", "ALEJA", "DROGA", "OBIAD", "ATUTY", "ASTMA", "ATLAS", "PLECY", "ANEKS", 
+                    "AKCJA", "BAJKA", "BANAN", "BARON", "BYTOM", "BEJCA", "BILET", "BIGOS", "BLADY", "BAGNO", "CEWKA", "CHORA", "CHLEB", "DOMEK", "DUCHY",
+                    "ELITA", "EPIKA", "FARBA", "FARMA", "FRAZA", "FELGA", "FUTRO", "FRYTY", "GROTA", "HAMAK", "HONOR", "ISKRA", "INDIE", "JAJKO", "KEBAB",
+                    "KASZA", "KATAR", "KOMIN", "LIMIT", "LITRY", "LAMPA", "LWICA", "MAGIA", "MAFIA", "MUCHA", "KOMAR", "MNICH", "MODNA", "OBCAS", "OBAWA",
+                    "OBIAD", "OBAWA", "OCENA", "OPERA", "OPCJA", "PACHA", "PUDEL", "PALCE", "PALEC", "PASZA", "PEPSI", "PIZZA", "PLAGA", "ROWER", "SABAT",
+                    "SALWA", "SAUNA", "SKALA", "SELER", "SERCE", "SFERA", "TAFLA", "TAJGA", "TENIS", "WALEC", "RADIO", "KUTAS", "TATRY"];
 let WordToDiscover = DiscoverWord();
-console.log(WordToDiscover);
 
 const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
@@ -36,12 +40,10 @@ BackspaceTile.addEventListener("click",function(){
     {
         CurrentTile--;
         GridItems[CurrentTile].innerHTML = "";
-        console.log(CurrentTile);
     }
     else if(CurrentTile == MinLetterIndex)
     {
         GridItems[CurrentTile].innerHTML = "";
-        console.log(CurrentTile);
     }
 });
 
@@ -65,8 +67,6 @@ EnterTile.addEventListener("click", function(){
         {
             MinLetterIndex += 5;
             MaxLetterIndex += 5;
-
-            console.log(TempWord);
         }
 
         for(let i = 5;i > 0;i--)
@@ -93,7 +93,6 @@ EnterTile.addEventListener("click", function(){
 
         if(TempWord === WordToDiscover)
         {
-            console.log("Win");
             SetLoyoutAsWin();
             ShowPopUp();
             return;
@@ -104,7 +103,6 @@ EnterTile.addEventListener("click", function(){
             {
                 SetLoyoutAsLose();
                 ShowPopUp();
-                console.log("Lose");
                 return;
             }
         }
@@ -129,7 +127,6 @@ function DiscoverWord()
     let rand = Math.random();
     rand = Math.floor( rand * difference);
     rand = rand + min;
-    console.log(rand);
     return ArrayOfWords[rand];
 }
 
@@ -144,7 +141,6 @@ function RestartGame()
     MinLetterIndex = 0;
     MaxLetterIndex = 5;
     CompletedWords = 0;
-    console.log(WordToDiscover);
 }
 
 function ShowPopUp()
