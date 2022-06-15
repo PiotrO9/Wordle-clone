@@ -4,7 +4,7 @@ let MinLetterIndex = 0;
 let MaxLetterIndex = 5;
 let CompletedWords = 0;
 
-let ArrayOfWords = ["KAJAK", "HAMAK", "ZAMEK", "PTAKI", ""];
+let ArrayOfWords = ["KAJAK", "HAMAK", "ZAMEK", "PTAKI"];
 let WordToDiscover = DiscoverWord();
 console.log(WordToDiscover);
 
@@ -18,8 +18,8 @@ const CloseButton = document.querySelector("#PopUp__button");
 const PasswordAnswer = document.querySelector("#PasswordAnswer");
 const Result = document.querySelector("#Result");
 
-const KeyboardTiels = document.querySelectorAll(".KeyboardTile");
-const GridItems = document.querySelectorAll(".grid-item");
+const KeyboardTiels = document.querySelectorAll(".Keyboard__Tile");
+const GridItems = document.querySelectorAll(".Grid__item");
 
 KeyboardTiels.forEach(tile => {
 tile.addEventListener('click', function(){
@@ -135,7 +135,7 @@ function DiscoverWord()
 
 function RestartGame()
 {
-    DiscoverWord();
+    WordToDiscover = DiscoverWord();
     GridItems.forEach(item => {
         item.classList.remove("TileAtCorrectPosition", "TileAtWrongPosition");
         item.innerHTML = "";
