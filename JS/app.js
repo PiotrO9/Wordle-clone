@@ -1,3 +1,5 @@
+import {test} from './DesignFunctions.js';
+
 let MaximumAmountOfTiles = 30;
 let CurrentTile = 0;
 let MinLetterIndex = 0;
@@ -11,6 +13,7 @@ let ArrayOfWords = ["KAJAK", "HAMAK", "ZAMEK", "PTAKI", "RADOM", "AKORD", "NOKIA
                     "OBIAD", "OBAWA", "OCENA", "OPERA", "OPCJA", "PACHA", "PUDEL", "PALCE", "PALEC", "PASZA", "PEPSI", "PIZZA", "PLAGA", "ROWER", "SABAT",
                     "SALWA", "SAUNA", "SKALA", "SELER", "SERCE", "SFERA", "TAFLA", "TAJGA", "TENIS", "WALEC", "RADIO", "KUTAS", "TATRY"];
 let WordToDiscover = DiscoverWord();
+test();
 
 const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
